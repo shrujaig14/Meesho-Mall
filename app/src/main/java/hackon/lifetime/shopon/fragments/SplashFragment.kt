@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.HandlerCompat.postDelayed
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import hackon.lifetime.shopon.R
 import hackon.lifetime.shopon.adapters.ProductAdapter
@@ -28,6 +30,8 @@ private const val ARG_PARAM2 = "param2"
 class SplashFragment : Fragment() {
     private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding!!
+    private lateinit var navControl : NavController
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,8 +43,9 @@ class SplashFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        navControl = Navigation.findNavController(view)
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToHome(it.id))
+            navControl.navigate(R.id.action_splashFragment_to_home)
         },2000);
     }
 }

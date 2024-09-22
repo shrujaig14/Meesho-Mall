@@ -46,15 +46,18 @@ class DetailFragment : Fragment() {
 
                 binding.virtual.setOnClickListener {
                     val sceneViewerIntent = Intent(Intent.ACTION_VIEW)
-                    val intentUri =
-                        Uri.parse("https://arvr.google.com/scene-viewer/1.0").buildUpon()
-                            .appendQueryParameter("file", modelURL)
-                            .appendQueryParameter("mode", "ar_only")
-                            .appendQueryParameter("resizable", "false")
-                            .appendQueryParameter("title", "$name - ₹$price")
-                            .build()
+                    val intentUri = Uri.parse("https://arvr.google.com/scene-viewer/1.0").buildUpon()
+                        .appendQueryParameter("file", modelURL)
+                        .appendQueryParameter("mode", "ar_only")
+//                        .appendQueryParameter("resizable", "true")
+                        .appendQueryParameter("title", "$name - ₹$price")
+//                        .appendQueryParameter("enable_vertical_placement", "true")
+                        .appendQueryParameter("disable_initial_placement","true")
+                        .appendQueryParameter("allow_360","true")
+//                        .appendQueryParameter("disable_reticule", "true")
+                        .build()
                     sceneViewerIntent.data = intentUri
-                    sceneViewerIntent.setPackage("com.google.ar.core")
+                    sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox")
                     startActivity(sceneViewerIntent)
                 }
 
