@@ -1,5 +1,5 @@
 # Meesho Dice Challenge 
-We developed an Android app using Augmented Reality (AR) for the -**Meesho Dice Challenge**_. This app was designed to improve the shopping experience as part of the challenge's problem statement.
+We developed an Android app using Augmented Reality (AR) for the **Meesho Dice Challenge**. This app was designed to improve the shopping experience as part of the challenge's problem statement.
 
 Download app in .apk format [Download](App ki link jayegi yaha par, drive par)
 ## Problem Statement:
